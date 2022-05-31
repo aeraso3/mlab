@@ -1,8 +1,8 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template, request
 import numpy as np
 import pickle
 
-model=pickle.load(open('antecedentes_hospitalizacion.pkl','rb'))
+model=pickle.load(open('rl_vive.pkl','rb'))
 
 app = Flask(__name__)
 
