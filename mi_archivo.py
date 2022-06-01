@@ -1,8 +1,8 @@
-from flask import Flask,render_template, request
+from flask import Flask,render_template,request
 import numpy as np
 import pickle
 
-model2=pickle.load(open('rl_vive.pkl','rb'))
+model=pickle.load(open('rl_vive.pkl','rb'))
 
 app = Flask(__name__)
 
@@ -24,9 +24,9 @@ def predict():
     
     def statement():
         if pred == 0:
-            return 'Resultado:- El modelo ha pronosticado que no será hospitalizado pero debe cuidarse.'
+            return 'Result:- The model has predicted that you will not suffer from any cardic arresst but you should take care of your self.'
         elif pred == 1:
-            return 'Resultado:- Debe consultar con el médico, el modelo ha predicho que deberá ser hospitalizado.'
+            return 'Result:- You should consult with doctor, The model has predicted that you will suffer form cardic arrest.'
     
     return render_template('new.html',statement=statement())
 
