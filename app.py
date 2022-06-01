@@ -20,13 +20,13 @@ def predict():
     data6=float(request.form['f'])
     data7=float(request.form['g'])
     features=np.array([data1,data2,data3,data4,data5,data6,data7])
-    pred = model.predict([features])
+    pred = model2.predict([features])
     
     def statement():
         if pred == 0:
-            return 'Resultado:- El modelo ha pronosticado que no será hospitalizado pero debe cuidarse.'
+            return 'Resultado:- El modelo ha pronosticado que los síntomas descritos no ponen en riesgo su vida pero debe cuidarse.'
         elif pred == 1:
-            return 'Resultado:- Debe consultar con el médico, el modelo ha predicho que deberá ser hospitalizado.'
+            return 'Resultado:- Debe consultar con el médico, el modelo ha predicho que sus síntomas ponen en riesgo su vida.'
     
     return render_template('new.html',statement=statement())
 
