@@ -27,7 +27,7 @@ def predict():
             return 'Resultado: -El modelo ha pronosticado que los síntomas descritos no ponen en riesgo su vida pero debe cuidarse.'
         elif pred == 1:
             return 'Resultado: -Debe consultar con el médico, el modelo ha predicho que sus síntomas ponen en riesgo su vida.'
-    
+    pyt
     return render_template('new.html',statement=statement())
 
 
